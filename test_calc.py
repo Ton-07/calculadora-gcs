@@ -26,6 +26,24 @@ def testar_operacoes():
 if __name__ == "__main__":
     testar_operacoes()
 
+# ====== TESTE MODULO B ======
+import calc_potencia
+
+def testar_modulo():
+    #Teste de potencia
+    assert calc_potencia.potencia(2, 3) == 8
+    assert calc_potencia.potencia(0, 5) == 0
+    assert calc_potencia.potencia(5, 0) == 1
+    #Teste de raiz quadrada
+    assert calc_potencia.raiz_quadrada(4) == 2
+    assert calc_potencia.raiz_quadrada(0) == 0
+    
+    #Teste de raiz cubica
+    assert calc_potencia.raiz_cubica(27) == 3
+    assert calc_potencia.raiz_cubica(0) == 0
+
+    print("testes do modulo b executados com exatidao")
+
 # ====== TESTE MODULO D ======
 import unittest
 from calc_estatistica import media, mediana, desvio_padrao
