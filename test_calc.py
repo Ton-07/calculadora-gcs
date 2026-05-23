@@ -26,6 +26,44 @@ def testar_operacoes():
 if __name__ == "__main__":
     testar_operacoes()
 
+# ====== TESTE MODULO D ======
+import unittest
+from calc_estatistica import media, mediana, desvio_padrao
+
+class TestCalcEstatistica(unittest.TestCase):
+
+    def test_media(self):
+        # Casos normais
+        self.assertEqual(media([1, 2, 3, 4, 5]), 3.0)
+        self.assertEqual(media([10]), 10.0)
+        
+        # Caso de borda: lista vazia deve lançar ValueError
+        with self.assertRaises(ValueError):
+            media([])
+
+    def test_mediana(self):
+        # Casos normais (ímpar e par de elementos)
+        self.assertEqual(mediana([1, 3, 5]), 3)
+        self.assertEqual(mediana([1, 2, 3, 4]), 2.5)
+        self.assertEqual(mediana([5, 1, 3]), 3) # Lista desordenada
+        
+        # Caso de borda: lista vazia deve lançar ValueError
+        with self.assertRaises(ValueError):
+            mediana([])
+
+    def test_desvio_padrao(self):
+        # Caso normal
+        self.assertEqual(desvio_padrao([1, 2, 3]), 1.0)
+        
+        # Casos de borda: listas com menos de 2 elementos devem lançar ValueError
+        with self.assertRaises(ValueError):
+            desvio_padrao([1])
+        with self.assertRaises(ValueError):
+            desvio_padrao([])
+
+if __name__ == '__main__':
+    unittest.main()
+
 
 # ====== TESTE MODULO E ======
 
