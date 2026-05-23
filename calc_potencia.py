@@ -1,7 +1,7 @@
 # calc_potencia.py
 # Módulo B — Operações de Potência
 # Autor: Gabriel Mattos de Aquino
-# Branch: feature/modulo-potencia
+# Branch: feat/modulo-b
 
 import math
 
