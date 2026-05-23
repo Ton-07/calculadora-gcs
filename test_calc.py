@@ -48,4 +48,4 @@ if __name__ == "__main__":
     test_celsius_para_fahrenheit()
     test_km_para_milhas()
     test_kg_para_libras()
-    print("Deu bom os testes")
+    print("Deu bom os testes!")
