@@ -25,3 +25,27 @@ def testar_operacoes():
 
 if __name__ == "__main__":
     testar_operacoes()
+
+
+# ====== TESTE MODULO E ======
+
+from calc_conversao import celsius_para_fahrenheit, km_para_milhas, kg_para_libras
+
+def test_celsius_para_fahrenheit():
+    assert celsius_para_fahrenheit(0) == 32
+    assert celsius_para_fahrenheit(100) == 212
+    assert celsius_para_fahrenheit(-40) == -40
+
+def test_km_para_milhas():
+    assert round(km_para_milhas(1), 6) == 0.621371
+    assert round(km_para_milhas(0), 6) == 0
+
+def test_kg_para_libras():
+    assert round(kg_para_libras(1), 5) == 2.20462
+    assert round(kg_para_libras(0), 5) == 0
+
+if __name__ == "__main__":
+    test_celsius_para_fahrenheit()
+    test_km_para_milhas()
+    test_kg_para_libras()
+    print("Deu bom os testes")
