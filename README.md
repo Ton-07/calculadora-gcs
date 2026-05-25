@@ -15,7 +15,9 @@ Os módulos foram divididos da seguinte maneira:
 ## Link do Repositório
 [https://github.com/Ton-07/calculadora-gcs](https://github.com/Ton-07/calculadora-gcs)
 
-*(A entrega oficial exige este link juntamente com a imagem do histórico `git log --oneline --graph`)*
+## Histórico Git
+
+![Histórico Git](git-log.png)
 
 ## Como Executar o Projeto
 
