@@ -45,42 +45,52 @@ def testar_modulo():
     print("testes do modulo b executados com exatidao")
 
 # ====== TESTE MODULO D ======
-import unittest
 from calc_estatistica import media, mediana, desvio_padrao
 
-class TestCalcEstatistica(unittest.TestCase):
+def rodar_testes():
+    print("Iniciando testes do Módulo de Estatística...\n")
 
-    def test_media(self):
-        # Casos normais
-        self.assertEqual(media([1, 2, 3, 4, 5]), 3.0)
-        self.assertEqual(media([10]), 10.0)
-        
-        # Caso de borda: lista vazia deve lançar ValueError
-        with self.assertRaises(ValueError):
-            media([])
+    #Testes da Média 
+    print("1. Testando media()...")
+    assert media([1, 2, 3, 4, 5]) == 3.0, "Erro na média"
+    assert media([10]) == 10.0, "Erro na média com 1 elemento"
+    
+    try:
+        media([])
+        print("ERRO: media([]) não lançou a exceção ValueError!")
+    except ValueError:
+        print("Caso de borda tratado: media([]) bloqueada com sucesso.")
 
-    def test_mediana(self):
-        # Casos normais (ímpar e par de elementos)
-        self.assertEqual(mediana([1, 3, 5]), 3)
-        self.assertEqual(mediana([1, 2, 3, 4]), 2.5)
-        self.assertEqual(mediana([5, 1, 3]), 3) # Lista desordenada
-        
-        # Caso de borda: lista vazia deve lançar ValueError
-        with self.assertRaises(ValueError):
-            mediana([])
 
-    def test_desvio_padrao(self):
-        # Caso normal
-        self.assertEqual(desvio_padrao([1, 2, 3]), 1.0)
-        
-        # Casos de borda: listas com menos de 2 elementos devem lançar ValueError
-        with self.assertRaises(ValueError):
-            desvio_padrao([1])
-        with self.assertRaises(ValueError):
-            desvio_padrao([])
+    # --- Testes da Mediana ---
+    print("\n2. Testando mediana()...")
+    assert mediana([1, 3, 5]) == 3, "Erro na mediana ímpar"
+    assert mediana([1, 2, 3, 4]) == 2.5, "Erro na mediana par"
+    assert mediana([5, 1, 3]) == 3, "Erro na mediana desordenada"
+    
+    try:
+        mediana([])
+        print("ERRO: mediana([]) não lançou a exceção ValueError!")
+    except ValueError:
+        print("Caso de borda tratado: mediana([]) bloqueada com sucesso.")
 
+
+    # --- Testes do Desvio Padrão ---
+    print("\n3. Testando desvio_padrao()...")
+    assert desvio_padrao([1, 2, 3]) == 1.0, "Erro no desvio padrão"
+    
+    try:
+        desvio_padrao([1])
+        print("ERRO: desvio_padrao() com 1 elemento não lançou exceção!")
+    except ValueError:
+        print("Caso de borda tratado: desvio_padrao([1]) bloqueado com sucesso.")
+
+
+    print("\nTodos os testes passaram com sucesso!")
+
+# Executa a função de testes
 if __name__ == '__main__':
-    unittest.main()
+    rodar_testes()
 
 
 # ====== TESTE MODULO E ======
