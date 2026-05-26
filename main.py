@@ -1,7 +1,7 @@
 def menu():
     print("=== Calculadora GCS ===\n")
     
-    # Módulo A - Básico
+    # Módulo A 
     try:
         from calc_basico import somar, subtrair, multiplicar, dividir
         print("Módulo Básico carregado.")
@@ -10,7 +10,7 @@ def menu():
     except ImportError:
         print("Módulo Básico ainda não disponível.")
 
-    # Módulo B - Potência
+    # Módulo B
     try:
         from calc_potencia import potencia, raiz_quadrada, raiz_cubica
         print("Módulo Potência carregado.")
@@ -19,7 +19,7 @@ def menu():
     except ImportError:
         print("Módulo Potência ainda não disponível.")
 
-    # Módulo C - Percentual (Será carregado quando o responsável fizer o merge)
+    # Módulo C 
     try:
         from calc_percentual import percentual, acrescimo, desconto
         print("Módulo Percentual carregado.")
@@ -27,7 +27,7 @@ def menu():
     except ImportError:
         print("Módulo Percentual ainda não disponível.")
 
-    # Módulo D - Estatística
+    # Módulo D 
     try:
         from calc_estatistica import media, mediana, desvio_padrao
         print("Módulo Estatística carregado.")
@@ -35,7 +35,7 @@ def menu():
     except ImportError:
         print("Módulo Estatística ainda não disponível.")
 
-    # Módulo E - Conversão
+    # Módulo E 
     try:
         from calc_conversao import celsius_para_fahrenheit, km_para_milhas, kg_para_libras
         print("Módulo Conversão carregado.")
